@@ -24,11 +24,6 @@ class Person
     @age = num
   end
 
-  def run(long, distance)
-    @position << coord[:x]
-    @position << coord[:]
-  end
-
   def method_missing(sym, *params, &block)
     p params
   end
