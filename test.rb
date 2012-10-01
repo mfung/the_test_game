@@ -2,7 +2,7 @@ require 'rubygems'
 require 'minitest/autorun'
 require 'minitest/spec'
 require 'minitest/mock'
-require '~/Code/the_test_game/main'
+require './main'
 
 describe Person do
   describe "init" do
