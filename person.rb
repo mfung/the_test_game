@@ -20,6 +20,13 @@ class Person
     @age = num
   end
 
+  def run(args)
+    raise ParamError unless args.is_a? Hash
+    x = args[:x] || 0
+    y = args[:y] || 0
+    self.position = [x,y]
+  end
+
   def method_missing(sym, *params, &block)
     p params
   end
