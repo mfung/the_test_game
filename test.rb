@@ -2,7 +2,7 @@ require 'rubygems'
 require 'minitest/autorun'
 require 'minitest/spec'
 require 'minitest/mock'
-require '~/Code/the_test_game/main'
+require './main'
 
 describe Person do
   describe "init" do
@@ -28,6 +28,13 @@ describe Person do
       d.age = "10"
       d.age.must_equal 10
       -> { d.age = -1 }.must_raise ParamError
+    end
+  end
+
+  describe "position" do
+    it "starts with a default position" do
+      p = Person.new("bob")
+      p.position.must_equal [0,0]
     end
   end
 
