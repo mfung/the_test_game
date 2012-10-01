@@ -31,6 +31,13 @@ describe Person do
     end
   end
 
+  describe "position" do
+    it "starts with a default position" do
+      p = Person.new("bob")
+      p.position.must_equal [0,0]
+    end
+  end
+
   describe "run" do
     it "makes the person run" do
       p = Person.new("joe")
