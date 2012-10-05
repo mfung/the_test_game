@@ -32,9 +32,22 @@ describe Person do
   end
 
   describe "position" do
+    before(:each) do
+      @p = Person.new("bob")
+    end
+
     it "starts with a default position" do
-      p = Person.new("bob")
-      p.position.must_equal [0,0]
+      @p.position.must_equal [0,0]
+    end
+
+    it "allows the position to be set" do
+      @p.position = [50, -100]
+      @p.position.must_equal [50, -100]
+    end
+
+    it "errors if position is invalid" do
+      -> { @p.position = nil }.must_raise ArgumentError
+      -> { @p.position = "someString" }.must_raise ArgumentError
     end
   end
 
