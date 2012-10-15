@@ -6,7 +6,7 @@ class Person
     raise ParamError unless name.is_a?(String)
     @name = name
     @skills = []
-    @position = []
+    @position = [0, 0]
   end
 
   def add_skill(skill)
