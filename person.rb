@@ -20,6 +20,13 @@ class Person
     @age = num
   end
 
+  def position=(position)
+    position = [position] unless position.is_a? Array
+    position_is_valid = position.size === 2 && position.all?{ |p| p.is_a? Integer }
+    raise ArgumentError unless position_is_valid
+    @position = position
+  end
+
   def run(args)
     raise ParamError unless args.is_a? Hash
     x = args[:x] || 0
