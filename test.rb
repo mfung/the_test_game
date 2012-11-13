@@ -5,7 +5,7 @@ require 'minitest/mock'
 require './main'
 
 describe Person do
-  describe "init" do
+  describe "on initialization" do
     it "requires a name" do
       -> { Person.new() }.must_raise ArgumentError
       -> { Person.new([])}.must_raise ParamError
@@ -20,6 +20,12 @@ describe Person do
       d = Person.new("foo")
       d.skills.must_be_empty
     end
+
+    it "sets the age" do
+      d = Person.new("foo")
+      d.age.wont_be_nil
+    end
+
   end
 
   describe "age" do
