@@ -37,6 +37,15 @@ describe Person do
       @p = Person.new("bob")
     end
 
+    it "is a class" do
+      @p.position.class.should == Position
+    end
+
+    it "is still a class after being set" do
+      @p.position = [10, 10]
+      @p.position.class.should == Position
+    end
+
     it "starts with a default position" do
       @p.position.should == [0,0]
     end
