@@ -7,6 +7,7 @@ class Person
     @name = name
     @skills = []
     @position = [0, 0]
+    @age = 0
   end
 
   def add_skill(skill)

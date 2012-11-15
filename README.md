@@ -1,10 +1,9 @@
-The Test Game
+The Spec Game
 =============
 
-Write a test, then someone else writes the code to make the test pass.
+Write a spec, then someone else writes the code to make the spec pass.
 
-To run the test
+To run:
 
-    ruby test.rb
-
-If you didn't clone the repo to ~/Code, make sure to adjust line 5 of test.rb.
+    bundle install
+    rspec
