@@ -6,7 +6,7 @@ class Person
     raise ParamError unless name.is_a?(String)
     @name = name
     @skills = []
-    @position = [0, 0]
+    @position = Position.new([0,0])
     @age = 0
   end
 
